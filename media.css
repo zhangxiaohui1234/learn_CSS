@@ -1,6 +1,3 @@
-h1 {
-  color: maroon;
-}
 /* 媒体查询不支持or，特性查询支持or关键字 */
 @media projection { /* 在“投影媒体”中生效 */
   body {
