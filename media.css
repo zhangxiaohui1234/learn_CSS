@@ -1,0 +1,15 @@
+h1 {
+  color: maroon;
+}
+/* 媒体查询不支持or，特性查询支持or关键字 */
+@media projection { /* 在“投影媒体”中生效 */
+  body {
+    background: yellow;
+  }
+}
+
+@supports (color: blue) { /* 特性查询，当浏览器支持某个属性时，才应用下面的样式 */
+  body {                    /* 形式必须是“属性: 值”的形式 */
+    color: blue;
+  }
+}
