@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+}
+/* 中括号的是属性选择器，当元素具备某个属性时生效 */
+/* 可以跟上属性的值，精准选择 */
+img[alt] {
+  border: 3px solid red;
+}
+/* 部分属性值选择器，根据属性的值的一部分去匹配，相互之间的优先级相同 */
+/* 属性值包含子串“en” */
+/* *=的选择范围比较广，几乎涵盖了下面的几种选择器，用到的时候要写在最前面 */
+img[lang*="en"] {
+  border-color: grey;
+}
+/* 属性值以“en-”开头，或者“en”自身 */
+img[lang|="en"] {
+  border-color: green;
+}
+/* 属性值包含“en”的一组词 */
+/* 区别：~=是选择有一组单词列表中包含指定名称的元素；*=是选择一个字符串中包含指定名称的元素 */
+img[lang~="en"] {
+  border-color: blue;
+}
+/* 属性值以“cy”开头 */
+img[lang^="cy"] {
+  border-color: purple;
+}
+/* 属性值以“en”结尾 */
+/* i标识符是强制执行大小写不区分 */
+img[lang$="en" i] {
+  border-color: deeppink;
+}
+
+/* 子类选择器，只选择子级的元素，而不选择后代的元素 */
+h1 > strong {
+  color: pink;
+}
+
+/* 不相邻兄弟元素选择器，即中间有其他元素间隔，当然也可以选择相邻的兄弟元素 */
+h1 ~ h2 {
+  color: darkred;
+}
+
+/* 相邻元素选择器，选择紧挨着元素 */
+h2 + h3 {
+  color: cadetblue;
+}
+
+/* 拼接伪类 */
+a:visited:hover {
+  font-size: 20px;
+  color: blueviolet;
+}
+/* :root是根元素的伪类选择器，HTML的根元素始终是html */
+/* html元素可以直接选中，区别是两者的特指度不同，下文记录 */
+:root {
+  border: 10px dashed gray;
+}
+/* :empty空元素选择器可以选择没有任何子代的元素 */
+/* 注意： 空格和换行属于文本节点，具有文本节点的元素不能算作空元素 */
+/* 注意： 不仅能匹配如img，input，还能匹配textarea */
+p:empty {
+  height: 10px;
+  background-color: hotpink;
+}
+/* :only-child唯一子代选择器，选择的是该元素是父元素的唯一一个子元素的元素 */
+/* 注意： 唯一子代，即使是有两个相同的元素作为子代存在，也不匹配 */
+/* 注意： 不一定是子代元素，只要是唯一后代元素，都符合条件 */
+p font:only-child {
+  color: burlywood;
+}
+/* :only-of-type唯一类型选择器，选择的是该元素是父元素的唯一一个类型匹配的子元素的元素 */
+p strong:only-of-type {
+  color: cadetblue;
+}
+
+ul, ol {
+  display: inline-block;
+}
+/* 第一个子代选择器和最后一个子代选择器 */
+.child li:first-child {
+  color: chartreuse;
+}
+.child li:last-child {
+  color: chocolate;
+}
+/* 第一個子代類型選擇器和最後一個子代類型選擇器 */
+.type li:first-of-type {
+  color: coral;
+}
+.type li:last-of-type {
+  color: cornflowerblue;
+}
+/* 第n个元素选择器, 括号中可以是简单的代数式 */
+.nth li:nth-child(2) {
+  color: crimson;
+}
+/* 计算机求解时，n从0到无穷大，求解得出的值，就是列表中从“1”开始的第“值”项 */
+/* 注意： 如果是简单的间隔行样式，可以用关键字even偶数行和odd单数行，其他的请用代数式 */
+.nth-singular :nth-child(2n) {
+  color: cyan;
+}
