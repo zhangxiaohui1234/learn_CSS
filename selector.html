@@ -73,6 +73,39 @@
           <li>機 => キ</li>
           <li>機 => キ</li>
         </ol>
+        <fieldset>
+          <legend>我是表单</legend>
+          <form>
+            <label for="form-input">输入框</label>
+            <div id="form-input">
+              <input type="text" maxlength="10">
+              <input type="text" disabled>
+              <input type="number" min="2" max="10">
+              <input type="text" required>
+              <input type="text">
+              <input type="text" pattern="[4-5]" readonly>
+              <input type="email">
+            </div>
+            <label for="form-radio">单选框</label>
+            <div id="form-radio">
+              <input type="radio" name="gender" id="male" checked><font>猛男</font>
+              <input type="radio" name="gender" id="female"><font>萌妹</font>
+            </div>
+            <label for="form-checkbox">多选框</label>
+            <div id="form-checkbox">
+              <input type="checkbox" name="fruit" id="apple" value="苹果"><font>りんご</font>
+              <input type="checkbox" name="fruit" id="orange" value="橘子" checked><font>みかん</font>
+              <input type="checkbox" name="fruit" id="banana" value="香蕉"><font>バナナ</font>
+              <input type="checkbox" name="fruit" id="peach" value="水蜜桃"><font>すいみつとう</font>
+            </div>
+            <label for="form-button">按钮</label>
+            <div id="form-button">
+              <button>普通</button>
+              <button type="reset">重置</button>
+              <button type="submit">提交</button>
+            </div>
+          </form>
+        </fieldset>
       </fieldset>
   </div>
 </body>
