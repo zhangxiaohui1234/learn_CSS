@@ -163,3 +163,27 @@ input[type="email"]:invalid {
   background-color: darkseagreen;
 }
 /* :indeterminate：指代既未选中也没有未选中的单选或多选，该状态只能由dom脚本设定 */
+/* :not，指代忽略满足条件的元素，也即选择不满足条件的元素 */
+ul :not(:first-child) {
+  color: darkturquoise;
+}
+/* 伪元素的冒号是两个 */
+/* ::first-letter，装饰任何非行内元素的首字母，或者开头的标点符号和首字母 */
+.first-letter::first-letter {
+  color: deeppink;
+}
+/* ::first-line，装饰元素的首行文本 */
+.first-line::first-line {
+  color: deepskyblue;
+}
+/* ::first-letter和::first-line都有一些限制，比如只能应用倒块级元素上，且只能使用少数的属性 */
+/* ::before，在元素前面插入内容 */
+.before::before {
+  content: '己 => こ, ';
+  color: dimgray;
+}
+/* :after，在元素的后面插入内容 */
+.after::after {
+  content: ', 己 => コ';
+  color: dodgerblue;
+}
