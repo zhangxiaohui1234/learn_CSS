@@ -1,0 +1,59 @@
+html {
+  font-size: 625%;
+
+  --p-color: yellow;
+}
+* {
+  font-size: 0.16rem;
+}
+.cuboid {
+  width: 2rem;
+  height: 2rem;
+  color: var(--p-color);
+  background-color: brown;
+}
+.indent {
+  width: 500px;
+  text-indent: 32px;
+}
+.indent-2 {
+  width: 50px;
+  text-indent: -32px;
+}
+.vertical-1 span {
+  vertical-align: baseline;
+  color: brown;
+}
+.vertical-2 span {
+  vertical-align: sub;
+  color: burlywood;
+}
+.vertical-3 span {
+  vertical-align: super;
+  color: cadetblue;
+}
+.vertical-4 span {
+  vertical-align: bottom;
+  color: chartreuse;
+}
+.vertical-5 span {
+  vertical-align: text-bottom;
+  color: chocolate;
+}
+.vertical-6 span {
+  vertical-align: middle;
+  color: coral;
+}
+.vertical-7 span {
+  vertical-align: top;
+  color: cornflowerblue;
+}
+.vertical-8 span {
+  vertical-align: text-top;
+  color: crimson;
+}
+.vertical-reference {
+  display: inline-block;
+  width: 120px;
+  background-color: darkblue;
+}

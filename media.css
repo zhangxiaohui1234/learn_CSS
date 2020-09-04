@@ -10,3 +10,9 @@
     color: blue;
   }
 }
+
+@supports (transition: all 1s) {
+  * {
+    transition: all 1s;
+  }
+}
