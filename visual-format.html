@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="visual-format.css">
+  <title>visual-format</title>
+  <style>
+    @import url(media.css);
+  </style>
+</head>
+<body>
+  <fieldset>
+    <legend>视觉格式化基础</legend>
+    <fieldset>
+      <legend>导航栏标签nav</legend>
+      <nav>
+        <a href="###">奈 => な</a>
+        <a href="###">奈 => な</a>
+        <a href="###">奈 => ナ</a>
+        <a href="###">奈 => ナ</a>
+      </nav>
+    </fieldset>
+    <fieldset>
+      <legend>box-sizing</legend>
+      <p>改变width和height的具体意义，如果单纯设置width：400px，那么元素的内容就会是400px，内边距和边框都以此为基础</p>
+      <div class="box-sizing" style="box-sizing: content-box;">默认值，也即400px是内容的宽度</div>
+      <div class="box-sizing" style="box-sizing: padding-box;"></div>
+      <div class="box-sizing" style="box-sizing: border-box;">设置了border-box，那么400px就是左边框到右边框的距离为400px，内容区域大小由内边距决定</div>
+      <div style="width: 500px;height: 100px;margin: 0 100px;border: 5px solid green;">如果把width，margin-left，margin-right，都设置为固定长度的话，用css的话来说就是过约束，那margin-right将被强制设置为auto</div>
+    </fieldset>
+    <fieldset>
+      <legend>断行行为</legend>
+      <div style="width: 200px;">
+        <p class="box-decoration-break">当一个行内非置换元素因为长度不足被分成多行显示时，用户代理将其视为断成多块的一长行，每换一行就多一块。可以通过box-decoration-break属性改变。默认值是slice</p>
+      </div>
+      <div style="width: 200px;">
+        <p class="box-decoration-break" style="box-decoration-break: clone;-webkit-box-decoration-break: clone;">clone值把元素各片段视作单独的框，他和默认值slice的区别，如这两段段落的演示。chrome中使用需要加厂商前缀，且该属性只适用于行内元素中，行内块级元素都不行</p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>contents显示</legend>
+      <p>把display: contents应用到元素上之后，那个元素不再参与页面的格式化，相当于把它的子元素提升到当前的层级。用户代理会按照文档中没有这个ul元素进行渲染（也不知道有啥用。。。。）</p>
+      <ul class="contents">
+        <li>The first  list item</li>
+        <li>List item II: The Listening.</li>
+        <li>List item the third.</li>
+      </ul>
+    </fieldset>
+  </fieldset>
+</body>
+</html>
