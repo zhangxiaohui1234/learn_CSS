@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="box.css">
+  <title>CSS之box</title>
+  <style>
+    @import url('media.css');
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="child">内边距可以设置为百分比，参照物为父元素的内容区的宽高</div>
+    <span><strong class="child-2">测试行内元素的内边距，行内元素的内边距对行高没有影响</strong>，但是还是会占位.</span>
+    <span>img元素设置了内边距，则会把置换元素的边框推开，远离内容。而且，对行高产生了影响</span>
+    <img class="child-3" src="./images/ztfn.jpg" alt="加载失败">
+    <span class="child-4">边框可以同时设置不同的样式</span>
+    <span class="child-5">测试图像边框的值border-image-source，因为边框默认是none，所以必须要设置border-width和border-style</span>
+    <div class="child-6">
+      图像边框的属性，border-iamge-slice属性，该属性在图像上放置4条裁切线，4条裁切线围聚得到的部分用作绘制边框的图像。接收4个值，方向为上右下左.
+      注意：<strong style="color: aliceblue;">是对所用图片进行裁切。属性设置的百分比，是各条裁切线距图像各边的相对图像本身宽度的百分比长度。如果左右两边的百分比加起来大于或等于100%，那么上下两边和中间部分是空的，上下两边同理。</strong>
+    </div>
+    <div class="child-7">
+      默认情况下，只有边上8块会按照比例渲染到对应的边框上，中间的那部分就会被忽略。可以在百分比之后设置关键字fill，就不会被忽略了。
+      border-image-width和border-image-slice基本一致，只不过width裁切的是边框本身。
+      border-image-outset把边框图像向边框框外侧推，和border-image-width一样，设置数字值是border-width所定义的宽度的倍数，不能负值。
+      bordert-image-repeat调整图片的重复方式，可取值：stretch拉伸；repeat从中心往两边平铺；round不会出现截断的平铺，图片可能会略微拉伸；space不会出现截断的平铺，周围会有均匀空白区域。
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.box {
+  height: 200px;
+  background-color: skyblue;
+}
+
+.box .child {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  padding: 10%;
+  background-color: tomato;
+}
+
+.box .child-2 {
+  padding: 10%;
+  background-color: yellowgreen;
+}
+
+.box .child-3 {
+  padding: 20px;
+  background-color: thistle;
+}
+
+.box .child-4 {
+  border-width: 4px;
+  border-style: solid dashed dotted double;
+  border-color: red blue green brown;
+}
+
+.box .child-5 {
+  border: 25px solid;
+  border-image-source: url('./images/hair_drier.svg');
+}
+
+.box .child-6 {
+  width: 500px;
+  height: 200px;
+  margin: 20px auto;
+  background-color: tomato;
+  border: 25px solid;
+  border-image-source: url('./images/hair_drier.svg');
+  border-image-slice: 50%;
+}
+
+.box .child-7 {
+  width: 500px;
+  height: 200px;
+  margin: 20px auto;
+  background-color: tomato;
+  border: 25px solid;
+  border-image-source: url('./images/hair_drier.svg');
+  border-image-slice: 25% fill;
+  border-image-width: 25%;
+}
