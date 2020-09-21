@@ -1,0 +1,15 @@
+.child-1 {
+  overflow: scroll;
+  width: 15em;
+  height: 18em;
+}
+
+.child-1 h2 {
+  color: red;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+}
