@@ -1,0 +1,67 @@
+.child-1 {
+  background: url('./images/hair_drier.svg') no-repeat;
+  background-attachment: fixed;
+}
+
+.linear {
+  height: 200px;
+}
+
+.child-2 {
+  background-image: linear-gradient(green, gold);
+}
+
+.child-3 {
+  background-image: linear-gradient(90deg, green, gold);
+}
+
+.child-4 {
+  background-image: linear-gradient(to left, green, gold);
+}
+
+.child-5 {
+  background-image: linear-gradient(-135deg, green, gold, green);
+}
+
+.child-6 {
+  background-image: linear-gradient(to bottom left, green, gold, green);
+}
+
+.child-7 {
+  color: beige;
+  background-image: linear-gradient(to right, red 0%, 10%, blue 50%, green 100%);
+}
+
+.child-8 {
+  color: beige;
+  background-image: radial-gradient(circle 50px, red, green ,blue);
+}
+
+.child-9 {
+  color: beige;
+  background-image: linear-gradient(0deg, rgba(255, 128, 128, 0.25), transparent 75%),
+    linear-gradient(89deg, transparent, transparent 30%,
+      #510a0e 35%, #510a0e 40%, #510a0e 43%, #b93f3a 50%,
+      #ab0a08 55%, #640f18 60%, #651015 65%, #510a0e 70%,
+      #510a0e 75%, rgba(255, 128,128, 0) 80%, transparent),
+    linear-gradient(92deg, #510a0e, #510a0e 20%, #61100f 25%, #b93f3a 40%, #ab0a08 50%,
+      #6a0f18 70%, #651015 80%, #510a0e 90%, #510a0e);
+  background-size: auto, 300px 100%, 109px 100%;
+  background-repeat: repeat-x;
+}
+
+.child-10 {
+  color: beige;
+  background: repeating-radial-gradient(
+    100px circle at bottom center,
+    rgb(83%, 83%, 83%) 50%,
+    violet 55%, indigo 60%, blue 65%, green 70%,
+    yellow 75%, orange 80%, red 85%,
+    rgb(47%, 60%, 73%) 90%
+  );
+}
+
+.child-11 {
+  color: beige;
+  box-shadow: inset 10px 10px 5px 5px rgba(0,0,0);
+}
