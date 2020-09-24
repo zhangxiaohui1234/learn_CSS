@@ -1,0 +1,59 @@
+.main {
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.child-1 {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background-image: linear-gradient(to bottom, #cc00ff, #ff0099);
+}
+
+.child-2 {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.child-2 aside {
+  width: 300px;
+  text-align: center;
+  line-height: 250px;
+  background-image: linear-gradient(to right, #ffff66, #ff0066);
+}
+
+.child-2 main {
+  flex: 1 1 auto;
+  text-align: center;
+  background-image: linear-gradient(to top, #33ffff, #3300ff);
+}
+
+.child-3 {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background-image: linear-gradient(to left, #00ff33, #336600);
+}
+
+.child-4 {
+  display: inline-flex;
+  list-style-type: none;
+}
+
+.child-4 li {
+  border: 1px solid #000;
+}
+
+.child-4 :nth-child(3n+1) {
+  order: 3;
+  background-color: salmon;
+}
+
+.child-4 :nth-child(3n-1) {
+  order: -1;
+  background-color: springgreen;
+}

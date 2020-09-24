@@ -8,6 +8,7 @@
 @supports (color: blue) { /* 特性查询，当浏览器支持某个属性时，才应用下面的样式 */
   body {                    /* 形式必须是“属性: 值”的形式 */
     color: blue;
+    margin: 0;
   }
 }
 

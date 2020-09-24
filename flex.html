@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="flex.css">
+  <title>CSS之flex</title>
+  <style>
+    @import url('media.css');
+  </style>
+</head>
+<body>
+  <div class="main">
+    <header class="child-1">header</header>
+    <section class="child-2">
+      <aside>aside</aside>
+      <main>
+        main
+        <p>强烈不建议单独写flex-grow，flex-shrink，flex-basic，而是用flex简写的形式， flex的默认值为 0 1 auto</p>
+        <p>flex-grow可以设置为任何大于零的数字，设定弹性增长因子，决定分配弹性容器的可用空间时相对其他同级的弹性元素能增大的比例。例如有3个被设置为1 2 3，那么每一个所占剩余空间的比例就是六分之一，六分之二，六分之三</p>
+        <p>flex-shrink可以设置为任何大于零的数字，设定弹性缩减因子，决定空间不足以放下所有弹性元素时，当前弹性元素相对其他同级的弹性元素将缩小的比例。例如有3个被设置为1 2 3，那么每一个减少的比例就是超出部分的六分之一，六分之二，六分之三。在各弹性元素的宽度都不相同时，每个元素缩小的量等于缩减因子比例乘以flex-shrink的值，缩减因子比例的计算方式：缺少的空间 / ( (各弹性元素的宽度与缩减因子乘积) 的总和)</p>
+        <p>flex-basis设定弹性基准，定义弹性元素的初始或者默认尺寸，即根据增长因子和缩减银子分配多余或缺少的空间之前，弹性元素的大小。取值有content，auto，定值和百分比。content意为弹性基准等于内容的尺寸。auto等于主轴方向上的尺寸，如果width或者height有值，那么就等于这个值，如果未指定width，height，那么作用就和content一样。优先级：min-width > flex-basis > width。百分比时，相对的是<strong>弹性容器而不是弹性元素</strong>计算。为0时，弹性容器的尺寸根据增长因子按比例分给各个弹性元素。</p>
+        <fieldset>
+          <legend>order属性</legend>
+          order属性只对弹性元素起作用，order可以取负值，会把值相同的元素指定一个排序组，排序组按照order从小到大排列，排序组内按照代码编写的先后顺序排列。order只修改视觉顺序。
+          <ul class="child-4">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+          </ul>
+        </fieldset>
+      </main>
+    </section>
+    <footer class="child-3">footer</footer>
+  </div>
+</body>
+</html>
