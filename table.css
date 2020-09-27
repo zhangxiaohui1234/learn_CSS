@@ -4,6 +4,19 @@
 
 .table {
   width: 100%;
+  /* 该属性指定两种边框模型：默认值separate分离边框模型，单元格之间有间距；collapse折叠边框模型，单元格之间没有间隔 */
+  border-collapse: collapse;
+  /* 该属性设定单元格的间距，设置一个值时，横向与纵向都是这个值；设置两个值时，第一个值始终是横向间隔，第二个值始终是纵向间隔 */
+  border-spacing: 5px 3px;
+  /* 该属性设定空单元格的绘制方式，默认为show，设置为hide，空单元格将不渲染，只在border-collapse的值为separate时生效 */
+  empty-cells: hide;
+  /* 表格的宽度计算方式，默认为auto自动布局，还有fixed固定布局，设定固定布局的话，宽度设定多少就是多少，不会被比例分配； */
+  table-layout: fixed;
+}
+
+.table caption {
+  /* 该属性可以设定标题在表格中的位置 */
+  caption-side: bottom;
 }
 
 .table .dom {
@@ -17,7 +30,7 @@
 }
 
 .table .property {
-  width: 300px;
+  width: 3000px;
   background-color: brown;
 }
 
