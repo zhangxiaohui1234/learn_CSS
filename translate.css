@@ -1,0 +1,120 @@
+.container {
+  display: inline-block;
+  width: 25%;
+}
+
+.bg {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  color: snow;
+  background-image: linear-gradient(#ff0000, #3300ff);
+}
+
+.translateX {
+  transform: translateX(90px);
+}
+
+.translateY {
+  transform: translateY(90px);
+}
+
+.translate3d {
+  transform: translate3d(90px, 90px, 90px);
+}
+
+.scaleX {
+  transform: scaleX(2);
+}
+
+.scaleY {
+  transform: scaleY(2);
+}
+
+.scale3d {
+  transform: scale3d(2,2,2);
+}
+
+.rotateX {
+  transform: rotateX(45deg);
+}
+
+.rotateY {
+  transform: rotateY(45deg);
+}
+
+.rotateZ {
+  transform: rotateZ(45deg);
+}
+
+.rotate3d {
+  transform: rotate3d(1, 1, 1, 45deg);
+}
+
+.skewX {
+  transform: skewX(45deg);
+}
+
+.skewY {
+  transform: skewY(45deg);
+}
+
+.perspective {
+  transform: perspective(90px);
+}
+
+.matrix {
+  transform: matrix(1,1,0,1,1,0);
+}
+
+.matrix3d {
+  transform: matrix3d(1,1,1,0,
+    1,1,0,1,
+    1,0,1,1,
+    0,1,1,1);
+}
+
+.origin {
+  transform-origin: bottom;
+  transform: rotate(45deg);
+}
+
+.outer {
+  border: 1px solid black;
+  transform: perspective(750px) rotateY(60deg) rotateX(-20deg);
+  transform-style: preserve-3d;
+}
+
+.innner {
+  border: 1px solid black;
+  transform: perspective(750px) translateZ(60px) rotateX(45deg);
+}
+
+.aaa {
+  perspective: 90px;
+}
+
+.bbb {
+  perspective-origin: bottom;
+}
+
+section {
+  position: relative;
+}
+
+.img, .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.info {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background: rgba(255,255,255,0.85);
+}
+
+section:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;  
+}
