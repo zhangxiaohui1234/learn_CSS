@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="transition.css">
+  <title>CSS之过渡</title>
+  <style>
+    @import url('media.css');
+  </style>
+</head>
+<body>
+  <p>过渡由4个属性定义： transition-property,transition-duration,transition-timing-function和transition-delay,以及简写属性transition。</p>
+  <p><strong>transition-property</strong>: 指定想要应用过渡效果的CSS属性名称.以逗号分隔的属性列表，或者是none，默认值all</p>
+  <p><strong>transition-duration</strong>: 指定一个过渡的持续时间，以逗号分隔的时间长度列表</p>
+  <p><strong>transition-timing-function</strong>: 控制过渡的步调，可以取的值有ease，linear，ease-in，ease-out，ease-in-out，step-start，step-end，steps(n, start)n是步进的次数,steps(n, end)和cubic-bezier(x1,y1,x2,y2)</p>
+  <p><strong>transition-delay</strong>: 在过渡开始之前加上一定的延迟,可以取负值，而且绝对值比transition-duration的值小，从中间某个位置立即开始过渡;绝对值更大的话，属性值瞬间变化，就和没有应用transition一样，因此也就不会触发transitionend事件</p>
+  <div class="example-1">
+    <p>过渡结束后都会触发transitionend事件，事件中有三个与这个事件有关的属性：</p>
+    <ul>
+      <li><strong>propertyName</strong>：结束过渡的CSS属性的名称</li>
+      <li><strong>pseudoElement</strong>：应用过渡效果的伪元素，前面有两个冒号，如果过渡效果应用到常规的DOM节点上，返回空字符串</li>
+      <li><strong>elapsedTime</strong>：过渡持续的时间，单位为秒，返回的值通常是transition-duratioon属性声明的时间</li>
+    </ul>
+  </div>
+  <div class="example-2">不是所有属性都支持过渡动画，判断属性是否支持动画的关键，是确定其值能否内插。能否内插，指在两个数据点之间能否找到中间值，如rotate(10deg)和rotate(20deg)可以找到中间值rotate(15deg)，可能就支持动画，否则不能，如关键字就不可以</div>
+  <script>
+    // 监听过渡事件
+    document.querySelector('.example-1').addEventListener('transitionend', function (e) {
+      console.log('transitionend', e);
+      console.log('propertyName', e.propertyName);
+      console.log('pseudoElement', e.pseudoElement);
+      console.log('elapsedTime', e.elapsedTime);
+    })
+  </script>
+</body>
+</html>

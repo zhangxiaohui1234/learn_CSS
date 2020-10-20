@@ -1,0 +1,25 @@
+strong {
+  color: red;
+}
+
+.example-1 {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 50%;
+  transition: border-radius 1s ease-in;
+}
+
+.example-2 {
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  transform: translateX(0);
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-delay: -150ms;
+  transition-timing-function: linear;
+}
+
+.example-2:hover {
+  transform: translateX(200px);
+}
