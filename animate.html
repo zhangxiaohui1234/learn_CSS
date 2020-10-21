@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="animate.css">
+  <title>CSS之动画</title>
+  <style>
+    @import url('media.css');
+  </style>
+</head>
+<body>
+  <p>
+    想为元素添加动画效果，要有一个关键帧，这又哟球有一个具名关键帧动画。首先，要使用@keyframe规则定义可复用的CSS关键帧动画，并未动画起个名称。然后，通过这个名称把对应的动画效果应用到元素或伪元素上。<br>
+    一个@keyframe有一个动画标识符，以及一到多个关键帧块。每个关键帧块有一到多个关键帧选择符。动画可以迭代零次后者多次，这主要取决于animation-iteration-count属性的值。<br>
+    每个关键帧块中一到多个关键帧选择符，关键帧选择符是动画持续时间内的时间点，可以是百分数，也可以是关键字from或to。<br>
+    判断属性是否支持动画，和判断能否过渡一个道理，是否可以有中间插值，但是有两个例外：visibility和animation-timing-function。visibility的hidden和visible之间虽然没有中间点，但是可以有动画。而function不支持动画，但如果在关键帧块声明了，所在块中的属性值将使用它设定的时序函数，动画时序的变化不宜动画形式呈现，而是直接变成新值。<br>
+    包含三个事件：animationstart，animationiteration和animationend，每个事件都有三个只读属性：animationName，elapsedTime和pseudoElement.animationiteration在两次迭代之间触发。animationend事件也可以启动后续动画，但建议使用delay<br>
+    动画在UI线程中的优先级最低<br>
+    如果把元素设置为display：none，元素及其后代上的动画将停止，重新设置为某个可见的值后，动画将从头开始播放
+  </p>
+  <div class="animate-1">
+    关键帧规则在出现的那一刻还可以通过添加规则animateName.appendRule(n), 删除规则animateName.deleteRule(n), 查找规则animateName.findRule(n)，其中animateName是动画的名称，n是关键帧的完整选择符。
+    动画单个属性：
+    <ul>
+      <li>
+        <strong>animation-name</strong>：指定动画的名称，默认值为none。想应用多个动画，以逗号分隔。如果多个动画中有相同的属性变化，那么后面的会覆盖前面的。
+      </li>
+      <li>
+        <strong>animation-duration</strong>：定义动画迭代一次用时多久，单位为秒（s）或者（ms），应用多组动画，以逗号分隔。注意：如果一组时间中有无效的值，如0s，整个声明都将失效。
+      </li>
+      <li>
+        <strong>animation-iteration-count</strong>：生命动画迭代的次数，默认值为1，可以是任何数字，或关键字infinite。如果不是整数，动画将在最后一次循环的中途结束，不允许设为负值，可以设0
+      </li>
+      <li>
+        <strong>animation-direction</strong>：控制动画的执行方向，可取值有4个，默认值normal，从0%~100%播放；reverse逆序播放，从100%~0%播放；alternate第奇数次顺序播放，第偶数次逆序播放；alternate-reverse第奇数次逆序播放，第偶数次顺序播放
+      </li>
+      <li>
+        <strong>animation-delay</strong>：定义开始动画之前的延迟时间，默认为0s，单位为秒（s）或者（ms），可以设置为负值，动画从中途开始。可以通过设置延迟，形成一条动画链，第二个动画在第一个动画结束之后开始
+      </li>
+      <li>
+        <strong>animation-timing-function</strong>：定义动画的时序函数，可以在每一个关键帧内定义
+      </li>
+      <li>
+        <strong>animation-play-state</strong>：定义动画师播放还是暂停，running播放，paused暂停
+      </li>
+      <li>
+        <strong>animation-fill-mode</strong>：定义动画播放结束后是否应用原来的属性值，默认值为none，设为backwards时，0%或from关键帧中定义的属性值在动画应用到元素上的那一刻就起作用，不会等待delay；设为forwards时，动画播放结束后，最后一帧的属性值继续应用在元素上
+      </li>
+      <li>
+        <strong>animation</strong>：简写，省略的值将被设为默认值。有些值得顺序是重要的，如果列出两个时间，第一个始终为持续时间，第二个为延迟时间；动画名称最好放在最后
+      </li>
+    </ul>
+  </div>
+  <button onclick="">添加关键帧</button>
+  <button onclick="">删除关键帧</button>
+  <button onclick="">查找关键帧</button>
+  <script>
+    // 监听动画事件
+    document.querySelector('.animate-1').addEventListener('animationstart', function (e) {
+      console.log('animationstart', e);
+      console.log('animationName', e.animationName);
+      console.log('elapsedTime', e.elapsedTime);
+      console.log('pseudoElement', e.pseudoElement);
+    })
+    document.querySelector('.animate-1').addEventListener('animationiteration', function (e) {
+      console.log('animationiteration', e);
+      console.log('animationName', e.animationName);
+      console.log('elapsedTime', e.elapsedTime);
+      console.log('pseudoElement', e.pseudoElement);
+    })
+    document.querySelector('.animate-1').addEventListener('animationend', function (e) {
+      console.log('animationend', e);
+      console.log('animationName', e.animationName);
+      console.log('elapsedTime', e.elapsedTime);
+      console.log('pseudoElement', e.pseudoElement);
+    })
+  </script>
+</body>
+</html>
