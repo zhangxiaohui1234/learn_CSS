@@ -1,141 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="font.css" type="text/css">
-  <title>CSS之font</title>
-  <style>
-    @import url('media.css');
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font.css" type="text/css">
+    <title>CSS之font</title>
+    <style>
+        @import url('media.css');
+    </style>
 </head>
+
 <body>
-  <div>
-    <font>rem是根据文档的根元素，也即html元素的字号进行计算，</font>
-    <font>而em是根据他的父级元素，因此rem比较方便计算。</font>
-    <font>网站的默认字号是16px。</font>
-    <font>可以设置html的字体为625%，也即100px，这样 1rem就等于100px，方便页面元素的计算。字体放大10倍，是为了适配字体小于12px的情况</font>
-    <font>但是，rem基本适用于移动端，不用于pc端，且需要配合媒体查询，或者是onresize事件，移动端的网页字体会随着视窗的大小而改变的，这一点在视窗变的很小时很明显</font>
-  </div>
-  <div class="cuboid">
-    自定义变量：以两个连字符开头（--），用var()调用。如下，字体颜色使用了自定义变量，自定义变量区分大小写
-    <p>var(--p-color)</p>
-  </div>
-  <fieldset>
-    <legend>字体缩进</legend>
-    <p class="indent">设置文本的首行缩进，可以为负值，也可以设置百分数。大小和字体大小一致，一个字体大小的单位就是一个字体的缩进。如：现在大小是默认的16px，那么text-indent： 16px就是一个字的缩进。</p>
-    <p class="indent-2">设置成负值的样子</p>
-  </fieldset>
-  <fieldset>
-    <legend>文本对齐</legend>
-    文本对齐方式可以设置为px
-    <p style="text-align: start;">文本对齐方式： start, 起边对齐，与元素所在的边框的起边对齐</p>
-    <p style="text-align: left;">文本对齐方式： left</p>
-    <p style="text-align: end;">文本对齐方式： end， 终边对齐，与元素所在的边框的终边对齐</p>
-    <p style="text-align: right;">文本对齐方式： right</p>
-    <p style="text-align: center;">文本对齐方式： center</p>
-    <p style="text-align: justify;">文本对齐方式： justify， 两端对齐</p>
-    <p style="text-align: math-parent;">文本对齐方式： math-parent， 与父元素保持一致，基本可以视作inherit，略微有点差别，影响不大</p>
-    <p style="width: 225px;text-align-last: center;">设置文本的最后一行的对齐方式，注意：如果文本只有一行，那么text-align-last的优先级比text-align高</p>
-  </fieldset>
-  <fieldset>
-    <legend>纵向对齐</legend>
-    <div class="vertical-1" style="border: 1px solid #000;">
-      <span class="vertical-reference">基线对齐，元素的基线和父元素的基线对齐</span>
-      <span>左 => さ</span>
-      <span>左 => さ</span>
-      <span>散 => サ</span>
-      <span>散 => サ</span>
+    <button style="cursor: pointer;" onclick="history.back()">返回</button>
+    <div>
+        <font>rem是根据文档的根元素，也即html元素的字号进行计算，</font>
+        <font>而em是根据他的父级元素，因此rem比较方便计算。</font>
+        <font>网站的默认字号是16px。</font>
+        <font>可以设置html的字体为625%，也即100px，这样 1rem就等于100px，方便页面元素的计算。字体放大10倍，是为了适配字体小于12px的情况</font>
+        <font>但是，rem基本适用于移动端，不用于pc端，且需要配合媒体查询，或者是onresize事件，移动端的网页字体会随着视窗的大小而改变的，这一点在视窗变的很小时很明显</font>
     </div>
-    <div class="vertical-2" style="border: 1px solid #000;">
-      <span class="vertical-reference">下标对齐，把元素放在下标处，即元素的基线（对置换元素来说是底边线）低于父元素的基线</span>
-      <span>之 => し</span>
-      <span>之 => し</span>
-      <span>之 => シ</span>
-      <span>之 => シ</span>
+    <div class="cuboid">
+        自定义变量：以两个连字符开头（--），用var()调用。如下，字体颜色使用了自定义变量，自定义变量区分大小写
+        <p>var(--p-color)</p>
     </div>
-    <div class="vertical-3" style="border: 1px solid #000;">
-      <span class="vertical-reference">上标对齐，与sub相反，让元素的基线高于父元素的底线</span>
-      <span>寸 => す</span>
-      <span>寸 => す</span>
-      <span>须 => ス</span>
-      <span>须 => ス</span>
-    </div>
-    <div class="vertical-4" style="border: 1px solid #000;">
-      <span class="vertical-reference">底端对齐，把元素所在行内框的底边与行框的底边对齐</span>
-      <span>世 => せ</span>
-      <span>世 => せ</span>
-      <span>世 => セ</span>
-      <span>世 => セ</span>
-    </div>
-    <div class="vertical-5" style="border: 1px solid #000;">
-      <span class="vertical-reference">相对行中文本的底边对齐，对齐时不考虑置换元素或其他非文本元素，而是基于默认的文本框，默认的文本框由父元素的字号确定</span>
-      <span>曾 => そ</span>
-      <span>曾 => そ</span>
-      <span>曾 => ソ</span>
-      <span>曾 => ソ</span>
-    </div>
-    <div class="vertical-6" style="border: 1px solid #000;">
-      <span class="vertical-reference">中线对齐，比较常用的子元素垂直居中的写法</span>
-      <span>太 => た</span>
-      <span>太 => た</span>
-      <span>多 => タ</span>
-      <span>多 => タ</span>
-    </div>
-    <div class="vertical-7" style="border: 1px solid #000;">
-      <span class="vertical-reference">顶端对齐，与bottom相反</span>
-      <span>知 => ち</span>
-      <span>知 => ち</span>
-      <span>千 => チ</span>
-      <span>千 => チ</span>
-    </div>
-    <div class="vertical-8" style="border: 1px solid #000;">
-      <span class="vertical-reference">相对行中文本的顶端对齐</span>
-      <span>川 => つ</span>
-      <span>川 => つ</span>
-      <span>川 => ツ</span>
-      <span>川 => ツ</span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>文本装饰</legend>
-    <div style="text-decoration: overline line-through blue;color: red;">
-      <span>天 => て</span>
-      <span>天 => て</span>
-      <span>天 => テ</span>
-      <span>天 => テ</span>
-    </div>
-    <div style="text-decoration: underline;color: red;">
-      <span>止 => と</span>
-      <span>止 => と</span>
-      <span>止 => ト</span>
-      <span>止 => ト</span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>文本阴影</legend>
-      <p style="text-shadow: 10px 10px;">前两个长度值是定义阴影离文本的距离，第一个设置横向偏移，第二个设置纵向偏移</p>
-      <p style="text-shadow: red 10px 10px 5px;">第三个值定义阴影的模糊半径，模糊半径的定义是，从阴影的轮廓到模糊效果边界的距离</p>
-  </fieldset>
-  <fieldset>
-    <legend>换行和断字</legend>
-    <p>手动插入连字符的关键字是enter&shy;prise，受网站的语言影响，不同的语言有着&shy;不一样的断字规则，chrome还不支持该属性</p>
-    <p style="hyphens: auto;">
-      Please send this message to those people who mean something to you,to those who have touched your life in one way or another,to those who make you smile when you really need it,to those that make you see the brighter side of things when you are really down,to those who you want to let them know that you appreciate their friendship.And if you don’t, don’t worry,nothing bad will happen to you,you will just miss out on the opportunity to brighten someone’s day with this message.
-    </p>
-  </fieldset>
-  <fieldset>
-    <legend>文本方向</legend>
-    <div style="display: inline-block;width: 200px;writing-mode: vertical-lr;text-orientation: sideways;">This is a paragraph of 日本語　いもと, 还有中文</div>
-    <div style="margin-left: 100px;display: inline-block;width: 200px;writing-mode: vertical-lr;text-orientation: mixed;">This is a paragraph of 日本語 おじさん, 还有中文</div>
-    <div style="margin-left: 100px;display: inline-block;width: 200px;writing-mode: vertical-lr;text-orientation: upright;">This is a paragraph of 日本語 お兄ちゃん, 还有中文</div>
-  </fieldset>
-  <fieldset>
-    <legend>声明方向</legend>
-    <p>控制文本的排列方向，通过改变行内基线的方向</p>
-    <p style="direction: rtl;">设置direction属性, direction属性会影响到很多地方，文本书写方向，表格列布局的方向，内容在横向上溢出元素框的方向，以及两端对齐的元素中最后一行的位置</p>
-    <p style="direction: rtl;unicode-bidi: bidi-override;">同时设置了unicode-bidi: bidi-override属性，作用就和bdo标签的效果一样</p>
-    <bdo dir="rtl">bdo标签和dir属性，从左书写</bdo>
-  </fieldset>
+    <fieldset>
+        <legend>字体缩进</legend>
+        <p class="indent">设置文本的首行缩进，可以为负值，也可以设置百分数。大小和字体大小一致，一个字体大小的单位就是一个字体的缩进。如：现在大小是默认的16px，那么text-indent：
+            16px就是一个字的缩进。</p>
+        <p class="indent-2">设置成负值的样子</p>
+    </fieldset>
+    <fieldset>
+        <legend>文本对齐</legend>
+        文本对齐方式可以设置为px
+        <p style="text-align: start;">文本对齐方式： start, 起边对齐，与元素所在的边框的起边对齐</p>
+        <p style="text-align: left;">文本对齐方式： left</p>
+        <p style="text-align: end;">文本对齐方式： end， 终边对齐，与元素所在的边框的终边对齐</p>
+        <p style="text-align: right;">文本对齐方式： right</p>
+        <p style="text-align: center;">文本对齐方式： center</p>
+        <p style="text-align: justify;">文本对齐方式： justify， 两端对齐</p>
+        <p style="text-align: math-parent;">文本对齐方式： math-parent， 与父元素保持一致，基本可以视作inherit，略微有点差别，影响不大</p>
+        <p style="width: 225px;text-align-last: center;">设置文本的最后一行的对齐方式，注意：如果文本只有一行，那么text-align-last的优先级比text-align高
+        </p>
+    </fieldset>
+    <fieldset>
+        <legend>纵向对齐</legend>
+        <div class="vertical-1" style="border: 1px solid #000;">
+            <span class="vertical-reference">基线对齐，元素的基线和父元素的基线对齐</span>
+            <span>左 => さ</span>
+            <span>左 => さ</span>
+            <span>散 => サ</span>
+            <span>散 => サ</span>
+        </div>
+        <div class="vertical-2" style="border: 1px solid #000;">
+            <span class="vertical-reference">下标对齐，把元素放在下标处，即元素的基线（对置换元素来说是底边线）低于父元素的基线</span>
+            <span>之 => し</span>
+            <span>之 => し</span>
+            <span>之 => シ</span>
+            <span>之 => シ</span>
+        </div>
+        <div class="vertical-3" style="border: 1px solid #000;">
+            <span class="vertical-reference">上标对齐，与sub相反，让元素的基线高于父元素的底线</span>
+            <span>寸 => す</span>
+            <span>寸 => す</span>
+            <span>须 => ス</span>
+            <span>须 => ス</span>
+        </div>
+        <div class="vertical-4" style="border: 1px solid #000;">
+            <span class="vertical-reference">底端对齐，把元素所在行内框的底边与行框的底边对齐</span>
+            <span>世 => せ</span>
+            <span>世 => せ</span>
+            <span>世 => セ</span>
+            <span>世 => セ</span>
+        </div>
+        <div class="vertical-5" style="border: 1px solid #000;">
+            <span class="vertical-reference">相对行中文本的底边对齐，对齐时不考虑置换元素或其他非文本元素，而是基于默认的文本框，默认的文本框由父元素的字号确定</span>
+            <span>曾 => そ</span>
+            <span>曾 => そ</span>
+            <span>曾 => ソ</span>
+            <span>曾 => ソ</span>
+        </div>
+        <div class="vertical-6" style="border: 1px solid #000;">
+            <span class="vertical-reference">中线对齐，比较常用的子元素垂直居中的写法</span>
+            <span>太 => た</span>
+            <span>太 => た</span>
+            <span>多 => タ</span>
+            <span>多 => タ</span>
+        </div>
+        <div class="vertical-7" style="border: 1px solid #000;">
+            <span class="vertical-reference">顶端对齐，与bottom相反</span>
+            <span>知 => ち</span>
+            <span>知 => ち</span>
+            <span>千 => チ</span>
+            <span>千 => チ</span>
+        </div>
+        <div class="vertical-8" style="border: 1px solid #000;">
+            <span class="vertical-reference">相对行中文本的顶端对齐</span>
+            <span>川 => つ</span>
+            <span>川 => つ</span>
+            <span>川 => ツ</span>
+            <span>川 => ツ</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>文本装饰</legend>
+        <div style="text-decoration: overline line-through blue;color: red;">
+            <span>天 => て</span>
+            <span>天 => て</span>
+            <span>天 => テ</span>
+            <span>天 => テ</span>
+        </div>
+        <div style="text-decoration: underline;color: red;">
+            <span>止 => と</span>
+            <span>止 => と</span>
+            <span>止 => ト</span>
+            <span>止 => ト</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>文本阴影</legend>
+        <p style="text-shadow: 10px 10px;">前两个长度值是定义阴影离文本的距离，第一个设置横向偏移，第二个设置纵向偏移</p>
+        <p style="text-shadow: red 10px 10px 5px;">第三个值定义阴影的模糊半径，模糊半径的定义是，从阴影的轮廓到模糊效果边界的距离</p>
+    </fieldset>
+    <fieldset>
+        <legend>换行和断字</legend>
+        <p>手动插入连字符的关键字是enter&shy;prise，受网站的语言影响，不同的语言有着&shy;不一样的断字规则，chrome还不支持该属性</p>
+        <p style="hyphens: auto;">
+            Please send this message to those people who mean something to you,to those who have touched your life in
+            one way or another,to those who make you smile when you really need it,to those that make you see the
+            brighter side of things when you are really down,to those who you want to let them know that you appreciate
+            their friendship.And if you don’t, don’t worry,nothing bad will happen to you,you will just miss out on the
+            opportunity to brighten someone’s day with this message.
+        </p>
+    </fieldset>
+    <fieldset>
+        <legend>文本方向</legend>
+        <div style="display: inline-block;width: 200px;writing-mode: vertical-lr;text-orientation: sideways;">This is a
+            paragraph of 日本語　いもと, 还有中文</div>
+        <div
+            style="margin-left: 100px;display: inline-block;width: 200px;writing-mode: vertical-lr;text-orientation: mixed;">
+            This is a paragraph of 日本語 おじさん, 还有中文</div>
+        <div
+            style="margin-left: 100px;display: inline-block;width: 200px;writing-mode: vertical-lr;text-orientation: upright;">
+            This is a paragraph of 日本語 お兄ちゃん, 还有中文</div>
+    </fieldset>
+    <fieldset>
+        <legend>声明方向</legend>
+        <p>控制文本的排列方向，通过改变行内基线的方向</p>
+        <p style="direction: rtl;">设置direction属性, direction属性会影响到很多地方，文本书写方向，表格列布局的方向，内容在横向上溢出元素框的方向，以及两端对齐的元素中最后一行的位置
+        </p>
+        <p style="direction: rtl;unicode-bidi: bidi-override;">同时设置了unicode-bidi: bidi-override属性，作用就和bdo标签的效果一样</p>
+        <bdo dir="rtl">bdo标签和dir属性，从左书写</bdo>
+    </fieldset>
 </body>
+
 </html>

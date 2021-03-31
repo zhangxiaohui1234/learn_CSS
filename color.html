@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="color.css">
-  <title>CSS之color</title>
-  <style>
-    @import url('media.css');
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color.css">
+    <title>CSS之color</title>
+    <style>
+        @import url('media.css');
+    </style>
 </head>
+
 <body>
-  <p class="child-1">题外话: 背景有一个属性background-attachment，将背景固定在视图中，不跟随滚动。取值scroll默认跟随滚动，fixed固定居中，local固定局部上下文</p>
-  <div class="linear child-2">线性渐变-1</div>
-  <div class="linear child-3">线性渐变-2</div>
-  <div class="linear child-4">线性渐变-3</div>
-  <div class="linear child-5">线性渐变-4</div>
-  <div class="linear child-6">线性渐变-5</div>
-  <div class="linear child-7">线性渐变的语法：开头为方向，后面的就是从起点到终点的色值，色值以逗号分隔，色值后面可以跟上像素和百分比设置色值的位置。在两个色值之间的百分比，设置的是两个色值的“中间色”的位置所在</div>
-  <div class="linear child-8">径向渐变的语法：开头为形状，尺寸，中心点，以及色值。除了色值之外，都是可选项。形状只有circle和ellipse，尺寸可以用数值和百分比，百分比只用于ellipse</div>
-  <div class="linear child-9">利用渐变实现幕布褶皱</div>
-  <div class="linear child-10">循环径向渐变</div>
-  <div class="linear child-11">投影语法： 第一个值定义横向偏移；第二个值定义纵向偏移；第三个值定义模糊距离，指定给模糊留出多少空间；第四个值定义展开距离，这个值会改变投影的尺寸，在偏移的基础上投影的大小增加相应的尺寸。还有一个关键字inset，定义的投影在框体内部</div>
+    <button style="cursor: pointer;" onclick="history.back()">返回</button>
+    <p class="child-1">题外话: 背景有一个属性background-attachment，将背景固定在视图中，不跟随滚动。取值scroll默认跟随滚动，fixed固定居中，local固定局部上下文</p>
+    <div class="linear child-2">线性渐变-1</div>
+    <div class="linear child-3">线性渐变-2</div>
+    <div class="linear child-4">线性渐变-3</div>
+    <div class="linear child-5">线性渐变-4</div>
+    <div class="linear child-6">线性渐变-5</div>
+    <div class="linear child-7">
+        线性渐变的语法：开头为方向，后面的就是从起点到终点的色值，色值以逗号分隔，色值后面可以跟上像素和百分比设置色值的位置。在两个色值之间的百分比，设置的是两个色值的“中间色”的位置所在</div>
+    <div class="linear child-8">径向渐变的语法：开头为形状，尺寸，中心点，以及色值。除了色值之外，都是可选项。形状只有circle和ellipse，尺寸可以用数值和百分比，百分比只用于ellipse
+    </div>
+    <div class="linear child-9">利用渐变实现幕布褶皱</div>
+    <div class="linear child-10">循环径向渐变</div>
+    <div class="linear child-11">投影语法：
+        第一个值定义横向偏移；第二个值定义纵向偏移；第三个值定义模糊距离，指定给模糊留出多少空间；第四个值定义展开距离，这个值会改变投影的尺寸，在偏移的基础上投影的大小增加相应的尺寸。还有一个关键字inset，定义的投影在框体内部
+    </div>
 </body>
+
 </html>

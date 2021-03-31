@@ -1,142 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="table.css">
-  <title>CSS之表格</title>
-  <style>
-    @import url('media.css');
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="table.css">
+    <title>CSS之表格</title>
+    <style>
+        @import url('media.css');
+    </style>
 </head>
+
 <body>
-  <p>表格相关的标签说明：</p>
-  <ol>
-    <li>
-      <strong class="strong-list">table：</strong>定义表格。
-    </li>
-    <li>
-      <strong class="strong-list">caption：</strong>定义了表格的标题，必须紧跟table标签。
-    </li>
-    <li>
-      <strong class="strong-list">colgroup：</strong>用于对表格中的列进行组合，以便对其进行格式化
-    </li>
-    <li>
-      <strong class="strong-list">col：</strong>规定了元素内部的每一列的列属性，span属性控制横跨的列数。只支持很少的CSS属性，目前知道：background-color，width。如果所有col都设置了width，那么用户代理会把总空间根据width的比例分配给各个col；如果部分col设置了width，那么被设置的col宽度等于设置的值，未设定的会平分剩下的空间。
-    </li>
-    <li>
-      <strong class="strong-list">thead：</strong>定义表格的表头，用于组合表头内容
-    </li>
-    <li>
-      <strong class="strong-list">tbody：</strong>用于组合html表格的主体内容，应该和thead，tfoot组合使用，表示表格的表头，主体，页脚，元素内部必须包含tr
-    </li>
-    <li>
-      <strong class="strong-list">tfoot：</strong>用于组合表格的页脚内容
-    </li>
-    <li>
-      <strong class="strong-list">tr：</strong>定义表格中的行，一个tr中包裹着th和td
-    </li>
-    <li>
-      <strong class="strong-list">th：</strong>定义表格的表头单元格，默认为居中的粗体
-    </li>
-    <li>
-      <strong class="strong-list">td：</strong>定义表格的标准单元格，默认为左对齐的普通文本，使用colspan 和 rowspan 属性来实现内容横跨多个行或列；valign属性规定单元格内容的垂直排列方式
-    </li>
-  </ol>
-  <table class="table" border="1">
-    <caption>这是表格的标题</caption>
-    <colgroup>
-      <col class="dom" span="1">
-      <col class="effect" span="1">
-      <col class="property" span="1">
-    </colgroup>
-    <thead>
-      <tr>
-        <th class="th-first">标签</th>
-        <th class="th-second">作用</th>
-        <th class="th-third">属性</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="td-first">table</td>
-        <td class="td-second">定义表格</td>
-        <td class="td-third">
-          <ol>
-            <li>border: 规定单元格是否有边框，但边框一般都由单元格本身设定</li>
-          </ol>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-first">caption</td>
-        <td class="td-second">定义表格的标题，必须是table的子元素，而不是后代元素</td>
-        <td class="td-third"></td>
-      </tr>
-      <tr>
-        <td class="td-first">colgroup</td>
-        <td class="td-second">用于对表格中的列进行格式化</td>
-        <td class="td-third">无特殊属性</td>
-      </tr>
-      <tr>
-        <td class="td-first">col</td>
-        <td class="td-second">规定了表格内部每一列的列样式，只支持很少的css属性</td>
-        <td class="td-third">
-          <ol>
-            <li>
-              <strong>span：</strong>控制横跨的列数
-            </li>
-            <li>
-              <strong>background-color：</strong>控制列的背景颜色
-            </li>
-            <li>
-              <strong>width：</strong>控制列的宽度。如果所有的col都设置了width，那么总宽度会按照width'的比例分配列的空间；如果是部分设置了width，那么未被设置的列，会平分剩下的空间
-            </li>
-          </ol>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-first">thead</td>
-        <td class="td-second">定义表格的表头内容</td>
-        <td class="td-third">无特殊属性</td>
-      </tr>
-      <tr>
-        <td class="td-first">tbody</td>
-        <td class="td-second">定义表格的主体内容，内容必须含有tr</td>
-        <td class="td-third">无特殊属性</td>
-      </tr>
-      <tr>
-        <td class="td-first">tfoot</td>
-        <td class="td-second">定义表格的页脚内容</td>
-        <td class="td-third">无特殊属性</td>
-      </tr>
-      <tr>
-        <td class="td-first">tr</td>
-        <td class="td-second">定义表格的行，必须含有th或td</td>
-        <td class="td-third"></td>
-      </tr>
-      <tr>
-        <td class="td-first">th</td>
-        <td class="td-second">定义表头的单元格，默认为居中的粗体</td>
-        <td class="td-third"></td>
-      </tr>
-      <tr>
-        <td class="td-first" valign="bottom">td</td>
-        <td class="td-second" valign="top">定义主体的单元格，默认为左对齐的普通文本</td>
-        <td class="td-third">
-          <ol>
-            <li>
-              <strong>rowspan：</strong>控制单元格横跨的行数
-            </li>
-            <li>
-              <strong>colspan：</strong>控制单元格横跨的列数
-            </li>
-            <li>
-              <strong>valign：</strong>控制单元格内容的垂直排列方式
-            </li>
-          </ol>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <button style="cursor: pointer;" onclick="history.back()">返回</button>
+    <p>表格相关的标签说明：</p>
+    <ol>
+        <li>
+            <strong class="strong-list">table：</strong>定义表格。
+        </li>
+        <li>
+            <strong class="strong-list">caption：</strong>定义了表格的标题，必须紧跟table标签。
+        </li>
+        <li>
+            <strong class="strong-list">colgroup：</strong>用于对表格中的列进行组合，以便对其进行格式化
+        </li>
+        <li>
+            <strong
+                class="strong-list">col：</strong>规定了元素内部的每一列的列属性，span属性控制横跨的列数。只支持很少的CSS属性，目前知道：background-color，width。如果所有col都设置了width，那么用户代理会把总空间根据width的比例分配给各个col；如果部分col设置了width，那么被设置的col宽度等于设置的值，未设定的会平分剩下的空间。
+        </li>
+        <li>
+            <strong class="strong-list">thead：</strong>定义表格的表头，用于组合表头内容
+        </li>
+        <li>
+            <strong class="strong-list">tbody：</strong>用于组合html表格的主体内容，应该和thead，tfoot组合使用，表示表格的表头，主体，页脚，元素内部必须包含tr
+        </li>
+        <li>
+            <strong class="strong-list">tfoot：</strong>用于组合表格的页脚内容
+        </li>
+        <li>
+            <strong class="strong-list">tr：</strong>定义表格中的行，一个tr中包裹着th和td
+        </li>
+        <li>
+            <strong class="strong-list">th：</strong>定义表格的表头单元格，默认为居中的粗体
+        </li>
+        <li>
+            <strong class="strong-list">td：</strong>定义表格的标准单元格，默认为左对齐的普通文本，使用colspan 和 rowspan
+            属性来实现内容横跨多个行或列；valign属性规定单元格内容的垂直排列方式
+        </li>
+    </ol>
+    <table class="table" border="1">
+        <caption>这是表格的标题</caption>
+        <colgroup>
+            <col class="dom" span="1">
+            <col class="effect" span="1">
+            <col class="property" span="1">
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="th-first">标签</th>
+                <th class="th-second">作用</th>
+                <th class="th-third">属性</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-first">table</td>
+                <td class="td-second">定义表格</td>
+                <td class="td-third">
+                    <ol>
+                        <li>border: 规定单元格是否有边框，但边框一般都由单元格本身设定</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-first">caption</td>
+                <td class="td-second">定义表格的标题，必须是table的子元素，而不是后代元素</td>
+                <td class="td-third"></td>
+            </tr>
+            <tr>
+                <td class="td-first">colgroup</td>
+                <td class="td-second">用于对表格中的列进行格式化</td>
+                <td class="td-third">无特殊属性</td>
+            </tr>
+            <tr>
+                <td class="td-first">col</td>
+                <td class="td-second">规定了表格内部每一列的列样式，只支持很少的css属性</td>
+                <td class="td-third">
+                    <ol>
+                        <li>
+                            <strong>span：</strong>控制横跨的列数
+                        </li>
+                        <li>
+                            <strong>background-color：</strong>控制列的背景颜色
+                        </li>
+                        <li>
+                            <strong>width：</strong>控制列的宽度。如果所有的col都设置了width，那么总宽度会按照width'的比例分配列的空间；如果是部分设置了width，那么未被设置的列，会平分剩下的空间
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-first">thead</td>
+                <td class="td-second">定义表格的表头内容</td>
+                <td class="td-third">无特殊属性</td>
+            </tr>
+            <tr>
+                <td class="td-first">tbody</td>
+                <td class="td-second">定义表格的主体内容，内容必须含有tr</td>
+                <td class="td-third">无特殊属性</td>
+            </tr>
+            <tr>
+                <td class="td-first">tfoot</td>
+                <td class="td-second">定义表格的页脚内容</td>
+                <td class="td-third">无特殊属性</td>
+            </tr>
+            <tr>
+                <td class="td-first">tr</td>
+                <td class="td-second">定义表格的行，必须含有th或td</td>
+                <td class="td-third"></td>
+            </tr>
+            <tr>
+                <td class="td-first">th</td>
+                <td class="td-second">定义表头的单元格，默认为居中的粗体</td>
+                <td class="td-third"></td>
+            </tr>
+            <tr>
+                <td class="td-first" valign="bottom">td</td>
+                <td class="td-second" valign="top">定义主体的单元格，默认为左对齐的普通文本</td>
+                <td class="td-third">
+                    <ol>
+                        <li>
+                            <strong>rowspan：</strong>控制单元格横跨的行数
+                        </li>
+                        <li>
+                            <strong>colspan：</strong>控制单元格横跨的列数
+                        </li>
+                        <li>
+                            <strong>valign：</strong>控制单元格内容的垂直排列方式
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>

@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="translate.css">
-  <title>CSS之变形</title>
-  <style>
-    @import url('media.css');
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="translate.css">
+    <title>CSS之变形</title>
+    <style>
+        @import url('media.css');
+    </style>
 </head>
+
 <body>
-  <fieldset>
-    <legend>平移函数</legend>
-    <div class="container">
-      <span class="bg translateX"></span>
-    </div>
-    <div class="container">
-      <span class="bg translateY"></span>
-    </div>
-    <div class="container">
-      <span class="bg translate3d"></span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>缩放函数</legend>
-    <div class="container">
-      <span class="bg scaleX"></span>
-    </div>
-    <div class="container">
-      <span class="bg scaleY"></span>
-    </div>
-    <div class="container">
-      <span class="bg scale3d"></span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>旋转函数</legend>
-    <div class="container">
-      <span class="bg rotateX"></span>
-      <span class="bg rotateY"></span>
-      <span class="bg rotateZ"></span>
-      <span class="bg rotate3d">前三个值分别代表3维空间中向量的x, y, z分量，第4个值角度值，指定绕向量旋转的量</span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>倾斜函数</legend>
-    <div class="container">
-      <span class="bg skewX"></span>
-      <span class="bg skewY"></span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>视域函数</legend>
-    <div class="container">
-      <span class="bg perspective">通过距离设置元素z轴上的前后视距，视域越小，元素越失真</span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>矩阵函数</legend>
-    <div class="container">
-      <span class="bg matrix">有效值是6个以逗号分隔的数字，不能多，也不能少</span>
-      <span class="bg matrix3d">有效值是16个数字，不能多也不能少</span>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>其他属性</legend>
-    <div class="container">
-      <span class="bg origin">定义变形的原点，初始值是50% 50%。设定的是距元素左上角的距离。可以取两个或三个关键字，第一个值针对横向，第二个值针对纵向，可选的第三个值针对z轴，z轴只能用长度值</span>
-    </div>
-    <div class="container">
-      <div class="outer">
-        outer
-        <div class="inner">inner</div>
-      </div>
-    </div>
-    <div class="container">
-      <span class="bg aaa">修改视域</span>
-    </div>
-    <div class="container">
-      <span class="bg bbb">修改视域原点</span>
-    </div>
-    <div class="container">
-      <section>
-        <img class="img" src="./images/ztfn.jpg" alt="">
-        <div class="info">处理背面，决定元素的背面朝向我们时是否渲染背面</div>
-      </section>
-    </div>
-  </fieldset>
+    <button style="cursor: pointer;" onclick="history.back()">返回</button>
+    <fieldset>
+        <legend>平移函数</legend>
+        <div class="container">
+            <span class="bg translateX"></span>
+        </div>
+        <div class="container">
+            <span class="bg translateY"></span>
+        </div>
+        <div class="container">
+            <span class="bg translate3d"></span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>缩放函数</legend>
+        <div class="container">
+            <span class="bg scaleX"></span>
+        </div>
+        <div class="container">
+            <span class="bg scaleY"></span>
+        </div>
+        <div class="container">
+            <span class="bg scale3d"></span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>旋转函数</legend>
+        <div class="container">
+            <span class="bg rotateX"></span>
+            <span class="bg rotateY"></span>
+            <span class="bg rotateZ"></span>
+            <span class="bg rotate3d">前三个值分别代表3维空间中向量的x, y, z分量，第4个值角度值，指定绕向量旋转的量</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>倾斜函数</legend>
+        <div class="container">
+            <span class="bg skewX"></span>
+            <span class="bg skewY"></span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>视域函数</legend>
+        <div class="container">
+            <span class="bg perspective">通过距离设置元素z轴上的前后视距，视域越小，元素越失真</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>矩阵函数</legend>
+        <div class="container">
+            <span class="bg matrix">有效值是6个以逗号分隔的数字，不能多，也不能少</span>
+            <span class="bg matrix3d">有效值是16个数字，不能多也不能少</span>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>其他属性</legend>
+        <div class="container">
+            <span class="bg origin">定义变形的原点，初始值是50%
+                50%。设定的是距元素左上角的距离。可以取两个或三个关键字，第一个值针对横向，第二个值针对纵向，可选的第三个值针对z轴，z轴只能用长度值</span>
+        </div>
+        <div class="container">
+            <div class="outer">
+                outer
+                <div class="inner">inner</div>
+            </div>
+        </div>
+        <div class="container">
+            <span class="bg aaa">修改视域</span>
+        </div>
+        <div class="container">
+            <span class="bg bbb">修改视域原点</span>
+        </div>
+        <div class="container">
+            <section>
+                <img class="img" src="./images/ztfn.jpg" alt="">
+                <div class="info">处理背面，决定元素的背面朝向我们时是否渲染背面</div>
+            </section>
+        </div>
+    </fieldset>
 </body>
+
 </html>
